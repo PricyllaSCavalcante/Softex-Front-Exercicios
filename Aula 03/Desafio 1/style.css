@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    padding: 5px;
+    margin-top: 5px;
+}
+
+button {
+    padding: 8px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#situacao {
+    font-weight: bold;
+}
+
+.verde {
+    color: green;
+}
+
+.amarelo {
+    color: goldenrod;
+}
+
+.vermelho {
+    color: red;
+}

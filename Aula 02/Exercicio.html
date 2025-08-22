@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto Integrado - HTML, CSS e JS</title>
+
+  <style>
+    /* ===== Atividade 2: Estilização com CSS ===== */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #mensagem {
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Atividade 1: Estrutura HTML ===== -->
+  <h1>Bem-vindo(a) ao Meu Projeto Web</h1>
+  <h2>Aprendendo HTML, CSS e JavaScript</h2>
+  <p>Este é um exemplo completo com comentários para cada atividade.</p>
+  <p>Clique nos botões abaixo para testar as funcionalidades.</p>
+
+  <!-- ===== Atividade 3: Botão com função JS ===== -->
+  <button onclick="mostrarMensagem()">Clique para ver uma mensagem</button>
+
+  <!-- ===== Atividade 4: Mensagem com variável ===== -->
+  <button onclick="apresentarUsuario()">Me apresente</button>
+
+  <!-- ===== Atividade 6: Mini calculadora ===== -->
+  <div style="margin-top: 30px;">
+    <h3>Mini Calculadora</h3>
+    <input type="number" id="num1" placeholder="Número 1">
+    <input type="number" id="num2" placeholder="Número 2">
+    <br><br>
+    <button onclick="somar()">Somar</button>
+    <p id="resultado"></p>
+  </div>
+
+  <!-- Área onde as mensagens serão exibidas -->
+  <p id="mensagem"></p>
+
+  <script>
+    // ===== Atividade 3: Função básica com JS =====
+    function mostrarMensagem() {
+      document.getElementById("mensagem").textContent = "Você clicou no botão! 🎉";
+    }
+
+    // ===== Atividade 4: Função com variável =====
+    function apresentarUsuario() {
+      let nome = "Maria";
+      let hobby = "desenhar";
+      document.getElementById("mensagem").textContent = "Olá, meu nome é " + nome + " e eu gosto de " + hobby + ".";
+    }
+
+    // ===== Atividade 6: Soma de dois números =====
+    function somar() {
+      let n1 = Number(document.getElementById("num1").value);
+      let n2 = Number(document.getElementById("num2").value);
+      let resultado = n1 + n2;
+      document.getElementById("resultado").textContent = "Resultado: " + resultado;
+    }
+  </script>
+
+</body>
+</html>
