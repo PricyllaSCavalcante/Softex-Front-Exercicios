@@ -2,49 +2,17 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Painel de Turmas (Sprint 2h30)</title>
+  <title>Diagonal Principal</title>
   <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header><h1>Painel de Turmas</h1></header>
-
-  <main>
-    <section class="card">
-      <h2>Cadastrar Aluno</h2>
-      <form id="form">
-        <label>Nome
-          <input id="nome" type="text" placeholder="Ex.: Ana" required>
-        </label>
-        <label>Turma
-          <input id="turma" type="text" placeholder="Ex.: 1A" required>
-        </label>
-        <label>Média
-          <input id="media" type="number" min="0" max="10" step="0.1" required>
-        </label>
-        <button type="submit">Adicionar</button>
-        <span id="msg" class="msg"></span>
-      </form>
-    </section>
-
-    <section class="card">
-      <h2>Lista de Alunos</h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Nome</th><th>Turma</th><th>Média</th><th>Ações</th>
-          </tr>
-        </thead>
-        <tbody id="tbody"></tbody>
-      </table>
-
-      <div class="stats">
-        <span>Total: <strong id="total">0</strong></span>
-        <span>Média Geral: <strong id="mediaGeral">0.00</strong></span>
-      </div>
-    </section>
-  </main>
-
-  <footer><small>Sprint — JavaScript introdutório</small></footer>
+  <div class="card">
+    <h1>Matriz 4x4 e sua Diagonal</h1>
+    <div id="matriz"></div>
+    <p id="diagonal"></p>
+  </div>
 </body>
 </html>
+
+

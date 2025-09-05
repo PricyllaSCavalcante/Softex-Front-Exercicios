@@ -1,66 +1,28 @@
-// Estado simples (em 2h30 não complicar)
-let alunos = [
-  { id: crypto.randomUUID(), nome: 'Ana', turma: '1A', media: 8.2 },
-  { id: crypto.randomUUID(), nome: 'Bruno', turma: '2B', media: 6.5 },
-];
-
-const $ = (s) => document.querySelector(s);
-
-function erro(msg){ $('#msg').textContent = msg; setTimeout(()=> $('#msg').textContent='', 2000); }
-function validar({nome,turma,media}){
-  if(!nome || nome.trim().length<3) return 'Nome inválido';
-  if(!turma) return 'Turma inválida';
-  if(isNaN(media) || media<0 || media>10) return 'Média deve ser 0-10';
-  return null;
+// Função para calcular a média de um vetor de notas
+function mediaAluno(notas) {
+  let soma = 0;
+  for (let i = 0; i < notas.length; i++) {
+    soma += notas[i];
+  }
+  return soma / notas.length;
 }
 
-function calcularMediaGeral(lista){
-  if(lista.length===0) return 0;
-  return (lista.reduce((acc,a)=>acc+a.media,0)/lista.length);
-}
+document.addEventListener("DOMContentLoaded", () => {
+  // Três alunos
+  let aluno1 = [7, 8, 6];
+  let aluno2 = [9, 5, 7];
+  let aluno3 = [10, 9, 8];
 
-function render(){
-  const tbody = $('#tbody'); tbody.innerHTML='';
-  alunos.forEach(a=>{
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td>${a.nome}</td>
-      <td>${a.turma}</td>
-      <td>${a.media.toFixed(1)} 
-        <span class="badge ${a.media>=7?'ok':'low'}">${a.media>=7?'Aprov.':'Reprov.'}</span>
-      </td>
-      <td><button class="action del" data-id="${a.id}">Excluir</button></td>
-    `;
-    tbody.appendChild(tr);
-  });
+  // Calcular médias
+  let m1 = mediaAluno(aluno1);
+  let m2 = mediaAluno(aluno2);
+  let m3 = mediaAluno(aluno3);
 
-  $('#total').textContent = alunos.length;
-  $('#mediaGeral').textContent = calcularMediaGeral(alunos).toFixed(2);
-
-  // ações de exclusão
-  document.querySelectorAll('.del').forEach(b=>{
-    b.addEventListener('click', (e)=>{
-      const id = e.currentTarget.dataset.id;
-      alunos = alunos.filter(x=>x.id!==id);
-      render();
-    });
-  });
-}
-
-document.addEventListener('DOMContentLoaded', ()=>{
-  // submit
-  $('#form').addEventListener('submit', (e)=>{
-    e.preventDefault();
-    const data = {
-      nome: $('#nome').value.trim(),
-      turma: $('#turma').value.trim(),
-      media: Number($('#media').value)
-    };
-    const v = validar(data); if(v){ erro(v); return; }
-    alunos.push({ id: crypto.randomUUID(), ...data });
-    e.target.reset();
-    render();
-  });
-
-  render();
+  // Mostrar na tela
+  const resultado = document.getElementById("resultado");
+  resultado.innerHTML = `
+    Aluno 1: notas ${aluno1.join(", ")} → média = ${m1.toFixed(2)}<br>
+    Aluno 2: notas ${aluno2.join(", ")} → média = ${m2.toFixed(2)}<br>
+    Aluno 3: notas ${aluno3.join(", ")} → média = ${m3.toFixed(2)}
+  `;
 });
