@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apresentação — Seu Nome</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="topo">
+  <header id="hero" class="container">
+    <img class="avatar" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=400" alt="Foto de perfil">
+    <div class="intro">
+      <h1 id="nome">Seu Nome</h1>
+      <p class="tagline">Desenvolvedora Front-end • UX entusiasta • Estudando React</p>
+      <nav class="atalhos">
+        <a class="btn" href="#sobre">Sobre</a>
+        <a class="btn" href="#hobbies">Hobbies</a>
+        <a class="btn btn--primario" href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container grid" id="conteudo">
+    <section id="sobre" class="card">
+      <h2 class="titulo-secao">Sobre mim</h2>
+      <p class="muted">
+        Olá! Eu sou <strong>Seu Nome</strong>. Adoro transformar ideias em experiências web bonitas e acessíveis.
+        Esta página demonstra <em>classes e IDs</em>, <em>Grid/Flex</em> e <em>responsividade</em> com <em>media queries</em>.
+      </p>
+    </section>
+
+    <section id="hobbies" class="card">
+      <h2 class="titulo-secao">Hobbies & Interesses</h2>
+      <ul class="lista-hobbies">
+        <li class="hobby">Ler sobre tecnologia</li>
+        <li class="hobby">Correr ao ar livre</li>
+        <li class="hobby">Cozinhar receitas novas</li>
+        <li class="hobby">Jogos 2D e pixel art</li>
+      </ul>
+    </section>
+
+    <section id="contato" class="card">
+      <h2 class="titulo-secao">Fale comigo</h2>
+      <form class="form-contato" action="#" method="post">
+        <div class="campo">
+          <label for="nomeInput">Nome</label>
+          <input id="nomeInput" name="nome" type="text" placeholder="Seu nome" required>
+        </div>
+
+        <div class="campo">
+          <label for="emailInput">E-mail</label>
+          <input id="emailInput" name="email" type="email" placeholder="voce@exemplo.com" required>
+          <small class="hint">Prometo não fazer spam 🙂</small>
+        </div>
+
+        <button class="btn btn--primario" type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape container">
+    <small>© 2025 • Exercício de Fundamentos da Web</small>
+    <a class="voltar" href="#topo">Voltar ao topo ↑</a>
+  </footer>
+</body>
+</html>

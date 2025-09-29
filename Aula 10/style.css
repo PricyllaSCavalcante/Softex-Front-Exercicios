@@ -1,0 +1,100 @@
+/* ===== Paleta ===== */
+:root{
+  --bg-grad-1:#0ea5ea;
+  --bg-grad-2:#7c3aed;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --accent:#f43f5e;
+  --accent-2:#22c55e;
+  --accent-3:#f59e0b;
+  --btn:#0ea5ea;
+  --btn-text:#06243a;
+  --border:#e2e8f0;
+  --shadow:0 12px 30px rgba(0,0,0,.15);
+
+  --mobile-grad-1:#22c55e;
+  --mobile-grad-2:#06b6d4;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%}
+
+body{
+  min-height:100svh;
+  font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(255,255,255,.28), transparent 60%),
+    linear-gradient(135deg, var(--bg-grad-1), var(--bg-grad-2));
+}
+
+.container{width:min(1080px,92vw);margin-inline:auto;padding:20px}
+
+/* ===== Hero ===== */
+#hero{display:flex;align-items:center;gap:24px;padding-block:28px 8px;color:#fff}
+.avatar{
+  width:180px;height:180px;border-radius:999px;border:4px solid rgba(255,255,255,.85);
+  box-shadow:var(--shadow);object-fit:cover;
+}
+.intro{display:flex;flex-direction:column;gap:10px}
+#nome{font-size:clamp(26px,4vw,40px);font-weight:800}
+.tagline{opacity:.9;max-width:60ch}
+.atalhos{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+
+/* Botões */
+.btn{
+  background:#fff;border:1px solid rgba(255,255,255,.4);color:#0b3a54;
+  border-radius:12px;padding:.6rem 1rem;text-decoration:none;font-weight:600;
+  box-shadow:0 6px 14px rgba(0,0,0,.12);transition:.18s ease;
+}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(0,0,0,.18)}
+.btn--primario{background:var(--btn);color:var(--btn-text);border-color:transparent}
+
+/* ===== Grid principal ===== */
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:18px;align-items:start;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.titulo-secao{font-size:20px;margin-bottom:10px}
+.muted{color:var(--muted)}
+
+/* Hobbies */
+.lista-hobbies{display:grid;grid-template-columns:1fr 1fr;gap:10px;list-style:none;margin-top:6px}
+.hobby{
+  background:linear-gradient(135deg, rgba(244,63,94,.12), rgba(34,197,94,.10));
+  border-left:6px solid var(--accent);padding:.6rem .8rem;border-radius:12px;font-weight:600
+}
+.hobby:nth-child(2){border-left-color:var(--accent-2)}
+.hobby:nth-child(3){border-left-color:var(--accent-3)}
+.hobby:nth-child(4){border-left-color:var(--btn)}
+
+/* Formulário */
+.form-contato{display:flex;flex-direction:column;gap:12px}
+.campo{display:flex;flex-direction:column;gap:6px}
+label{font-weight:600;color:#0f172a}
+input{
+  border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;outline:none;
+  background:#f8fafc;transition:border-color .15s, box-shadow .15s
+}
+input:focus{border-color:var(--btn);box-shadow:0 0 0 3px rgba(14,165,234,.25)}
+.hint{font-size:.9rem;color:var(--muted)}
+
+/* Rodapé */
+.rodape{display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding-block:28px 38px;color:#fff}
+.voltar{color:#fff;text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.6)}
+.voltar:hover{opacity:.85}
+
+/* ===== Responsividade ===== */
+@media (max-width:780px){
+  body{
+    background:
+      radial-gradient(800px 400px at 100% 0%, rgba(255,255,255,.22), transparent 60%),
+      linear-gradient(135deg, var(--mobile-grad-1), var(--mobile-grad-2));
+  }
+  #hero{flex-direction:column;text-align:center}
+  .grid{grid-template-columns:1fr}
+  .lista-hobbies{grid-template-columns:1fr}
+  .rodape{flex-direction:column;text-align:center}
+  .avatar{width:150px;height:150px}
+}
+

@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+section {
+  margin: 50px 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+a.button {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px;
+  background: #0ea5ea;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+a.button:hover {
+  background: #0284c7;
+}
